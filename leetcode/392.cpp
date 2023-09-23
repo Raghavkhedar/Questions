@@ -13,6 +13,7 @@
 // Input: s = "axc", t = "ahbgdc"
 // Output: false
 // Solutions
+
 class Solution {
 public:
     bool isSubsequence(string s, string t) {
