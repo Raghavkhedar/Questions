@@ -15,26 +15,12 @@
 // Output: "y"
 
 // Solutions
-class Solution
-{
+class Solution {
 public:
-    char findTheDifference(string s, string t)
-    {
-        int sumS = 0, sumT = 0;
-
-        // Calculate the sum of ASCII values of characters in string s.
-        for (int i = 0; i < s.length(); i++)
-        {
-            sumS += s[i];
-        }
-
-        // Calculate the sum of ASCII values of characters in string t.
-        for (int i = 0; i < t.length(); i++)
-        {
-            sumT += t[i];
-        }
-
-        // Calculate the difference in the sums of ASCII values to find the differing character.
-        return static_cast<char>(sumT - sumS);
-    }
+  char findTheDifference(string s, string t) {
+    for (int i = 0; i < s.size(); i++)
+      t[i + 1] += t[i] - s[i]; // Passing the diff: (t[i]-s[i]) to t[i+1]
+    return t[t.size() -
+             1]; // The diff will be carried over to the last element eventually
+  }
 };
